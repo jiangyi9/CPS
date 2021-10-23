@@ -26,7 +26,7 @@ int main(){
 
 
 
-    //enter the given number
+    //enter a number
     printf("Please enter a decimal number (0 - 255): ");
     scanf("%d", &number_dec);
 
