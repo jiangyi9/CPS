@@ -56,7 +56,7 @@ int main(){
     //print the mask (binary)
     printf("The (binary) mask number is:  ");
     for(int i=0; i<8; i++){
-        if(i<mask) printf("0");
+        if(i<8-mask) printf("0");
         else printf("1");
     }
     printf("\n");
