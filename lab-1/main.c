@@ -3,7 +3,7 @@
 
 
 //  This is the function to switch the the given number from decimal to binary, 
-//and the binary result is stored in the array number_array[] biy by bit.
+//and the binary result is stored in the number_array[] biy by bit.
 void dec_to_bin(unsigned char number_dec, int number_array[]){
     int step = 7;
     while(number_dec != 0){
