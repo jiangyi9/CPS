@@ -3,7 +3,7 @@
 
 
 //  This is the function to switch the the given number from decimal to binary, 
-//and the binary result is stored in the number_array[] biy by bit.
+//and the binary result is stored in the array[] biy by bit.
 void dec_to_bin(unsigned char number, int array[]){
     int step = 7;
     while(number != 0){
@@ -36,7 +36,7 @@ int main(){
 
 
 
-    //enter the length of mask
+    //enter the mask
     printf("Please enter a hexadecimal mask: ");
     scanf("%x", &mask_hex);
 
