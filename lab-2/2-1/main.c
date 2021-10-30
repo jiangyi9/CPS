@@ -59,7 +59,6 @@ void decode(const char *encoded, char *decoded){
         }
     index_num++;
     }
-
 }
 
 int main(){
