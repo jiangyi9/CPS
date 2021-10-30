@@ -28,7 +28,7 @@ int main(){
 
 
     //enter a number
-    printf("Please enter a decimal number: ");
+    printf("Please enter a decimal number (0 - 255): ");
     scanf("%d", &number_dec);
 
     //switch the the given number from decimal to binary
@@ -37,7 +37,7 @@ int main(){
 
 
     //enter the mask
-    printf("Please enter a hexadecimal mask: ");
+    printf("Please enter a hexadecimal mask (0x00 - 0xff): ");
     scanf("%x", &mask_hex);
 
     //switch the mask from hexadecimal to decimal
