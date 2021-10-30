@@ -1,0 +1,2 @@
+Peter,Pasta,15,23,15,22,peter.pasta@tum.de
+Lisa,Lasagna,22,25,0,12,lisa.lasagna@tum.de
