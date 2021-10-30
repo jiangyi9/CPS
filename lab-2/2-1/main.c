@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <ctype.h>
 
 void encode(const char *original, char *encoded){
     int index_ori = 0, index_en = 0;
@@ -12,19 +11,14 @@ void encode(const char *original, char *encoded){
         }
         else{
             if( size>=2 && size<=9 ){
-                encoded[index_en] = size + '0';
-                index_en++;
+                encoded[index_en++] = size + '0';
             }
             else if( size>=10 ){
-                encoded[index_en] = size/10 + '0';
-                index_en++;
-                encoded[index_en] = size%10 + '0';
-                index_en++;
+                encoded[index_en++] = size/10 + '0';
+                encoded[index_en++] = size%10 + '0';
             }
             size = 1;
-            encoded[index_en] = original[index_ori];
-            index_en++;
-            index_ori++;
+            encoded[index_en++] = original[index_ori++];
         }
     }
 }
@@ -36,24 +30,21 @@ void decode(const char *encoded, char *decoded){
     char char_array[100];
 
     for(; encoded[index_en] != '\0'; index_en++){
-        if( encoded[index_en] <= '9'){
-            if( encoded[index_en+1] <= '9' ){
+        if(encoded[index_en] <= '9'){
+            if(encoded[index_en+1] <= '9'){
                 num_array[index_num] = 10 * (encoded[index_en] - '0') + (encoded[index_en+1] - '0');
                 index_en++;
                 index_num++;
             }
             else{
-                num_array[index_num] =  encoded[index_en] - '0';
-                index_num++;
+                num_array[index_num++] =  encoded[index_en] - '0';
             }
         }
         else{
             if(index_en == 0 || encoded[index_en-1] > '9'){
-                num_array[index_num] =  1;
-                index_num++;
+                num_array[index_num++] =  1;
             }
-            char_array[index_char] = encoded[index_en];
-            index_char++;
+            char_array[index_char++] = encoded[index_en];
         }
     }
 
