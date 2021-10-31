@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// define a new datatype "Grade_info"
 typedef struct{
     char first_name[15];
     char last_name[15];
@@ -12,6 +13,7 @@ typedef struct{
     float grade;
 }Grade_info;
 
+// transfer score to grade
 float transfer(int score){
     float grade;
     if(score < 50) grade = 5.0;
@@ -29,14 +31,18 @@ float transfer(int score){
 }
 
 int main(){
+
     Grade_info student[100];
     int num = 0;
+
+    //open input.txt
     FILE *fp = fopen("input.txt", "r");
     if(fp == NULL){
         printf("Fail to open the file !!");
         return -1;
     }
 
+    //read file and store data to student[num]
     while(!feof(fp)){
         fscanf(fp, "%[^,],%[^,],%d,%d,%d,%d,%s\n", student[num].first_name, student[num].last_name
         , &student[num].assignment_1, &student[num].assignment_2, &student[num].assignment_3
@@ -48,8 +54,10 @@ int main(){
     }
     fclose(fp);
 
+    //"total" is the total number of students, e.g. 2
     int total = num;
 
+    //write data to output.txt
     fp = fopen("output.txt", "w");
     for(num=0; num<total; num++){
         fprintf(fp, "%s %s <%s>: %.1f\n", student[num].first_name, student[num].last_name, student[num].email_address
