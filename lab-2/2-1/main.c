@@ -47,7 +47,9 @@ void decode(const char *encoded, char *decoded){
             if(index_en == 0 || encoded[index_en-1] > '9'){ // case 2.1: if this letter is at encoded[0], or both this element and its former element are letters
                 num_array[index_num++] =  1; // store number "1" to num_array[index_num]
             }
-            // case 2.2: this element is a letter, and its former element is a number
+            // case 2.2 (other cases): nothings happens here
+            
+            // when encoded[index_en] is a letter
             char_array[index_char++] = encoded[index_en]; // store this letter to char_array[index_char]
         }
     }
