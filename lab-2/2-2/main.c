@@ -20,7 +20,7 @@ float transfer(int score){
     else if(score >= 50 && score < 55.5) grade = 4.0;
     else if(score >= 55.5 && score < 60.5) grade = 3.7;
     else if(score >= 60.5 && score < 65.5) grade = 3.3;
-    else if(score >= 65.5 && score < 71.5) grade = 3.0;
+    else if(score >= 65.5 && score < 70.5) grade = 3.0;
     else if(score >= 70.5 && score < 75.5) grade = 2.7;
     else if(score >= 75.5 && score < 81) grade = 2.3;
     else if(score >= 81 && score < 86) grade = 2.0;

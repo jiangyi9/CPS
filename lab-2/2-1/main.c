@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 
 void encode(const char *original, char *encoded){
     int index_ori = 0, index_en = 0;
@@ -33,8 +34,8 @@ void decode(const char *encoded, char *decoded){
     char char_array[100]; // char_array[] is an array to store all letters of encoded[]
 
     for(; encoded[index_en] != '\0'; index_en++){
-        if(encoded[index_en] <= '9'){ //case 1: when encoded[index_en] is a number
-            if(encoded[index_en+1] <= '9'){ // case 1.1: when encoded[index_en+1] is also a number
+        if(isdigit(encoded[index_en])){ //case 1: when encoded[index_en] is a number
+            if(isdigit(encoded[index_en+1])){ // case 1.1: when encoded[index_en+1] is also a number
                 num_array[index_num] = 10 * (encoded[index_en] - '0') + (encoded[index_en+1] - '0'); /* let these 2 numbers be a   */
                 index_en++;                                                                          /* 2-digit number, and store  */
                 index_num++;                                                                         /* it to num_array[index_num] */
