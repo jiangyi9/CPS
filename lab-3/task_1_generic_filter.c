@@ -37,9 +37,9 @@ int main(){
     // read the signal_combined.csv file and store the data to X[]
 	char *line,*record;
 	char buffer[16];
-    fseek(fp, 0L, SEEK_SET);  //定位到第一行，每个英文字符大小为1
+    fseek(fp, 0L, SEEK_SET);
     int index = 0;
-    while ((line = fgets(buffer, sizeof(buffer), fp))!=NULL)//当没有读取到文件末尾时循环继续
+    while ((line = fgets(buffer, sizeof(buffer), fp))!=NULL)
     {
         record = strtok(line, "\n");
         X[index] = atof(record);
