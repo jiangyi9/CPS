@@ -10,7 +10,7 @@ signal_sin = amplitude_sin * sin(omega_sin*t + phase_sin);
 
 % Generation of noise signal
 phase_noise = 0;
-amplitude_noise = 0.25;
+amplitude_noise = 1;
 f_noise = 400; % 400Hz noise signal
 omega_noise = 2*pi*f_noise;
 signal_noise = amplitude_noise*sin(omega_noise*t + phase_noise);
