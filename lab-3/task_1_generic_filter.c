@@ -27,26 +27,17 @@ int main(){
     double X[301];
     double Y[301] = {0};
 
-    // read the signal_combined.csv file and store the data to X[]
-    FILE* fp = fopen("signal_combined.csv", "at+");
-    if(fp == NULL){
-        printf("Fail to open the file !!");
-        return -1;
-    }
+	FILE *fp=fopen("signal_combined.csv","r");
+	int index=0;
+	char *success;
+    char buffer[16];
 
     // read the signal_combined.csv file and store the data to X[]
-	char *line,*record;
-	char buffer[16];
-    fseek(fp, 0L, SEEK_SET);
-    int index = 0;
-    while ((line = fgets(buffer, sizeof(buffer), fp))!=NULL)
-    {
-        record = strtok(line, "\n");
-        X[index] = atof(record);
-        // printf("%lf\n", X[index]);
-        index++;
-    }
-    fclose(fp);
+	while((success=fgets(buffer,16,fp))!=NULL){
+		X[index]=atof(buffer);
+		index++;
+		};
+	fclose(fp);
 
     // process the data using filter()
     int length = index;

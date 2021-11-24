@@ -23,9 +23,9 @@ dlmwrite("signal_combined.csv",signal_combined.','precision','%.6f');
 % plot the combined signal with noise
 subplot(2,1,1);
 plot(t, signal_combined);
-xlabel('Time (s)')
-ylabel('Amplitude (dB)')
-title('Original Signal');
+xlabel('Time')
+ylabel('Amplitude')
+title('Original Signal (with noise)');
 
 % Butterworth filter
 Wp = 40/500;
@@ -37,8 +37,8 @@ signal_new = filter(b,a,signal_combined);
 % plot the new signal processed by the Butterworth filter
 subplot(2,1,2);
 plot (t, signal_new ) ;
-xlabel('Time (s)');
-ylabel('Amplitude (dB)');
+xlabel('Time');
+ylabel('Amplitude');
 title('Signal passed the Butterworth filter');
 
 % % plot the Bode plot
