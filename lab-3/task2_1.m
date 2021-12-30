@@ -20,6 +20,7 @@ signal_combined = signal_sin + signal_noise;
 % export the combined signal with noise
 dlmwrite("signal_combined.csv",signal_combined.','precision','%.6f');
 
+
 % plot the combined signal with noise
 subplot(2,1,1);
 plot(t, signal_combined);
