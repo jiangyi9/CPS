@@ -1,0 +1,10 @@
+ssh -p 2233 root@10.162.12.150
+b5bos6kasC7fZ2uh
+
+
+gcc -Wall -o ./server.out server.c -lrt
+taskset 0x200000 ./server.out
+
+
+gcc -Wall -o ./client.out client.c -lrt
+taskset 0x200000 ./client.out
